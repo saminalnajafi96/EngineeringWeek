@@ -1,3 +1,7 @@
 <resources>
     <string name="app_name">EngineeringWeek</string>
+    <string name="title_activity_bottom_menu">Sessions</string>
+    <string name="title_sessions">Sessions</string>
+    <string name="title_yoursessions">Your Sessions</string>
+    <string name="title_logout">Log out</string>
 </resources>
