@@ -1,4 +1,4 @@
-package com.example.android.engineeringweek;
+package com.netapp.android.engineeringweek;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
