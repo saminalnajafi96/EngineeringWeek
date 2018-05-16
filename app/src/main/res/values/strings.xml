@@ -1,3 +1,9 @@
 <resources>
     <string name="app_name">EngineeringWeek</string>
+    <string name="agendabtn">Agenda</string>
+    <string name="hdrimgdesc">NetApp Logo</string>
+
+    <string name="twbtn">Twitter</string>
+    <string name="fbbtn">Facebook</string>
+    <string name="lnbtn">LinkedIn</string>
 </resources>

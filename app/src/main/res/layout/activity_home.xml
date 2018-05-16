@@ -10,6 +10,7 @@
         android:id="@+id/imageView3"
         android:layout_width="wrap_content"
         android:layout_height="274dp"
+        android:contentDescription="@string/hdrimgdesc"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
@@ -28,11 +29,12 @@
         app:layout_constraintTop_toBottomOf="@+id/imageView3">
 
         <Button
-            android:id="@+id/button17"
+            android:id="@+id/agendabtn"
             android:layout_width="match_parent"
             android:layout_height="80dp"
             android:background="@color/colorPrimary"
-            android:text="Button"
+            android:text="@string/agendabtn"
+            android:onClick="openAgenda"
             android:textColor="@android:color/white" />
 
         <Space
@@ -45,14 +47,14 @@
             android:orientation="horizontal">
 
             <Button
-                android:id="@+id/button20"
+                android:id="@+id/twitterbtn"
                 android:layout_width="wrap_content"
                 android:layout_height="80dp"
                 android:layout_weight="1"
-                android:background="#3c1053"
-                android:text="btnTwit"
-                android:textColor="@android:color/white"
-                tools:text="Twitter" />
+                android:background="#55acee"
+                android:text="@string/twbtn"
+                android:onClick="openTwitter"
+                android:textColor="@android:color/white" />
 
             <Space
                 android:layout_width="wrap_content"
@@ -60,14 +62,14 @@
                 android:layout_weight="0.25" />
 
             <Button
-                android:id="@+id/button21"
+                android:id="@+id/facebookbtn"
                 android:layout_width="wrap_content"
                 android:layout_height="80dp"
                 android:layout_weight="1"
-                android:background="#002855"
-                android:text="btnFace"
-                android:textColor="@android:color/white"
-                tools:text="Facebook" />
+                android:background="#3b5998"
+                android:text="@string/fbbtn"
+                android:onClick="openFacebook"
+                android:textColor="@android:color/white" />
 
             <Space
                 android:layout_width="wrap_content"
@@ -75,14 +77,14 @@
                 android:layout_weight="0.25" />
 
             <Button
-                android:id="@+id/button22"
+                android:id="@+id/linkedinbtn"
                 android:layout_width="wrap_content"
                 android:layout_height="80dp"
                 android:layout_weight="1"
-                android:background="#00573F"
-                android:text="btnLink"
-                android:textColor="@android:color/white"
-                tools:text="LinkedIn" />
+                android:background="#007bb5"
+                android:text="@string/lnbtn"
+                android:onClick="openLinkedIn"
+                android:textColor="@android:color/white" />
         </LinearLayout>
 
     </LinearLayout>
