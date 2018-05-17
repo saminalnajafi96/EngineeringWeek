@@ -6,4 +6,8 @@
     <string name="twbtn">Twitter</string>
     <string name="fbbtn">Facebook</string>
     <string name="lnbtn">LinkedIn</string>
+
+    <string name="custbtn">Customer</string>
+    <string name="partbtn">Partner</string>
+    <string name="submitbtn">Submit</string>
 </resources>

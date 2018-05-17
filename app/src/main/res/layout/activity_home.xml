@@ -7,34 +7,34 @@
     tools:context=".HomeActivity">
 
     <ImageView
-        android:id="@+id/imageView3"
-        android:layout_width="wrap_content"
-        android:layout_height="274dp"
-        android:contentDescription="@string/hdrimgdesc"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/sqbg" />
+        android:id="@+id/imageView"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:background="@drawable/nbackground"
+        tools:layout_editor_absoluteX="0dp"
+        tools:layout_editor_absoluteY="82dp" />
 
     <LinearLayout
         android:layout_width="401dp"
-        android:layout_height="376dp"
+        android:layout_height="170dp"
         android:layout_marginEnd="8dp"
         android:layout_marginStart="8dp"
-        android:layout_marginTop="8dp"
         android:orientation="vertical"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageView3">
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.85">
 
         <Button
             android:id="@+id/agendabtn"
             android:layout_width="match_parent"
             android:layout_height="80dp"
+            android:alpha="0.75"
             android:background="@color/colorPrimary"
-            android:text="@string/agendabtn"
             android:onClick="openAgenda"
+            android:text="@string/agendabtn"
             android:textColor="@android:color/white" />
 
         <Space
@@ -43,7 +43,7 @@
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
+            android:layout_height="106dp"
             android:orientation="horizontal">
 
             <Button
@@ -51,9 +51,10 @@
                 android:layout_width="wrap_content"
                 android:layout_height="80dp"
                 android:layout_weight="1"
+                android:alpha="0.75"
                 android:background="#55acee"
-                android:text="@string/twbtn"
                 android:onClick="openTwitter"
+                android:text="@string/twbtn"
                 android:textColor="@android:color/white" />
 
             <Space
@@ -66,9 +67,10 @@
                 android:layout_width="wrap_content"
                 android:layout_height="80dp"
                 android:layout_weight="1"
+                android:alpha="0.75"
                 android:background="#3b5998"
-                android:text="@string/fbbtn"
                 android:onClick="openFacebook"
+                android:text="@string/fbbtn"
                 android:textColor="@android:color/white" />
 
             <Space
@@ -81,9 +83,10 @@
                 android:layout_width="wrap_content"
                 android:layout_height="80dp"
                 android:layout_weight="1"
+                android:alpha="0.75"
                 android:background="#007bb5"
-                android:text="@string/lnbtn"
                 android:onClick="openLinkedIn"
+                android:text="@string/lnbtn"
                 android:textColor="@android:color/white" />
         </LinearLayout>
 
