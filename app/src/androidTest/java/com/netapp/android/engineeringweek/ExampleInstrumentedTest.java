@@ -1,4 +1,4 @@
-package com.example.android.engineeringweek;
+package com.netapp.android.engineeringweek;
 
 import android.content.Context;
 import android.support.test.InstrumentationRegistry;

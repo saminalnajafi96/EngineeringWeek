@@ -1,13 +1,21 @@
-package com.example.android.engineeringweek;
+package com.netapp.android.engineeringweek;
 
+import android.app.AlertDialog;
 import android.content.Context;
 import android.graphics.Typeface;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseExpandableListAdapter;
+import android.widget.ImageButton;
 import android.widget.TextView;
+import android.widget.Toast;
 
+import com.opencsv.CSVReader;
+
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 
@@ -49,7 +57,7 @@ public class ExpandableListAdapter extends BaseExpandableListAdapter {
             convertView = layoutInflater.inflate(R.layout.list_group, null);
         }
 
-        TextView listHeader = (TextView) convertView.findViewById(R.id.listHeader);
+        TextView listHeader = convertView.findViewById(R.id.listHeader);
         listHeader.setTypeface(null, Typeface.BOLD);
         listHeader.setText(headerTitle);
 
@@ -67,18 +75,57 @@ public class ExpandableListAdapter extends BaseExpandableListAdapter {
     }
 
     @Override
-    public View getChildView(int grouPosition, final int childPosition, boolean isLastChild, View convertView, ViewGroup parent) {
-        final String childText = (String) getChild(grouPosition, childPosition);
+    public View getChildView(final int groupPosition, final int childPosition, boolean isLastChild, View convertView, final ViewGroup parent) {
+        final String childText = (String) getChild(groupPosition, childPosition);
 
         if(convertView == null) {
             LayoutInflater layoutInflater = (LayoutInflater) this._context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
             convertView = layoutInflater.inflate(R.layout.list_item, null);
         }
 
+        // TextView which will hold the text of the child item
         TextView textListChild = convertView.findViewById(R.id.listItem);
+        ImageButton moreInfoButton = convertView.findViewById(R.id.moreButton);
 
+        moreInfoButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                try {
+                    CSV csv = SessionsActivity.csv;
+                    int userType = SessionsActivity.userType;
+                    csv.getUserCSV(userType, groupPosition);
+
+                    String[] info = csv.getMoreInfo(userType, childPosition, parent.getContext());
+
+                    AlertDialog.Builder alertDialogBuilder = new AlertDialog.Builder(parent.getContext());
+
+                    if(info[1].equals("none")) {
+                        alertDialogBuilder.setMessage("Time: " + info[0]);
+                    } else {
+                        alertDialogBuilder.setMessage("Time: " + info[0] + "\n\n" + "Speaker(s): " + info[1]);
+                    }
+
+                    AlertDialog alertDialog = alertDialogBuilder.create();
+                    alertDialog.show();
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
+            }
+        });
+
+        // Set the text of the child item
         textListChild.setText(childText);
+
         return convertView;
+    }
+
+    public boolean sessionExists(String session, ArrayList<String> sessionsList) {
+        for(int i = 0; i < sessionsList.size(); i++) {
+            if(sessionsList.get(i) == session) {
+                return true;
+            }
+        }
+        return false;
     }
 
     @Override
@@ -95,4 +142,5 @@ public class ExpandableListAdapter extends BaseExpandableListAdapter {
     public boolean hasStableIds() {
         return false;
     }
+
 }
